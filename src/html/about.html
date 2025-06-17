@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../CSS/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-[url(../images/bg.avif)] bg-cover bg-center bg-fixed bg-no-repeat"
+  >
+    <div
+      class="fixed inset-0 w-full h-full bg-gradient-to-b from-black/70 to-blue-900/50 -z-10"
+    ></div>
+
+    <header class="w-full md:p-2">
+      <div id="navbar" class="flex items-center p-3 justify-between">
+        <!-- Logo -->
+        <div id="logo" class="flex flex-center">
+          <img src="../images/logo.svg" class="h-8 ml-2 md:h-12" />
+          <h1
+            class="text-2xl font-extrabold tracking-tight text-yellow-400 hidden md:block md:ml-8"
+          >
+            IRCTC Ticket Booking
+          </h1>
+        </div>
+
+        <!-- Bars Icon (Pushed to Right) -->
+        <button
+          id="navDialog"
+          class="ml-auto pr-4 md:hidden"
+          onclick="handleMenu()"
+        >
+          <img
+            src="../images/bars-solid.svg"
+            alt="navigation"
+            class="h-8 md:invisible"
+          />
+        </button>
+
+        <div id="links" class="hidden md:block mr-4">
+          <nav class="flex gap-16">
+            <a
+              href="index.html"
+              class="hover:text-stone-400 text-lg font-extrabold text-yellow-400"
+              >Home</a
+            >
+            <a
+              href="index.html#services"
+              class="hover:text-stone-400 text-lg font-extrabold text-yellow-400"
+              >Services</a
+            >
+            <a
+              href="contact.html"
+              class="hover:text-stone-400 font-extrabold text-lg text-yellow-400"
+              >Contact</a
+            >
+            <a
+              href="about.html"
+              class="hover:text-stone-400 font-extrabold text-lg text-yellow-400"
+              >About</a
+            >
+          </nav>
+        </div>
+      </div>
+
+      <div
+        id="menu"
+        class="fixed bg-[url(../images/bg.avif)] bg-cover bg-center bg-fixed bg-no-repeat inset-0 p-3 md:hidden hidden"
+      >
+        <div
+          class="fixed inset-0 w-full h-full bg-gradient-to-b from-black/70 to-blue-900/50 -z-10"
+        ></div>
+        <div class="flex justify-between">
+          <div id="logo">
+            <img src="../images/logo.svg" class="h-8 ml-2 md:h-12" />
+          </div>
+          <button
+            class="p-2 md:hidden transition-all duration-200 active:scale-90"
+            onclick="handleMenu()"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="mt-[16px]">
+          <a
+            href="index.html"
+            class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
+            >About us</a
+          >
+          <a
+            href="contact.html"
+            class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
+            >Contact us</a
+          >
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Intro Section -->
+      <section class="text-center py-16 px-4">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-4">
+          About This Project
+        </h2>
+        <p class="max-w-3xl mx-auto text-lg text-gray-300">
+          This IRCTC Ticket Booking clone is a full-stack web application
+          developed to simulate real-world ticket booking systems. It includes
+          functionalities like booking, searching, and canceling train tickets
+          in an intuitive and responsive UI.
+        </p>
+      </section>
+
+      <!-- Features Section -->
+      <section class="py-16 px-6">
+        <h3 class="text-3xl font-semibold text-center text-yellow-400 mb-12">
+          Key Features
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-gray-700 p-6 rounded-2xl shadow-xl">
+            <h4 class="text-xl font-bold text-yellow-300 mb-2">
+              🎫 Book Tickets Instantly
+            </h4>
+            <p>
+              Real-time seat availability, station selection, and fast
+              confirmation flow.
+            </p>
+          </div>
+          <div class="bg-gray-700 p-6 rounded-2xl shadow-xl">
+            <h4 class="text-xl font-bold text-yellow-300 mb-2">
+              🔍 Smart Train Search
+            </h4>
+            <p>
+              Search trains using dynamic filters based on date, source, and
+              destination.
+            </p>
+          </div>
+          <div class="bg-gray-700 p-6 rounded-2xl shadow-xl">
+            <h4 class="text-xl font-bold text-yellow-300 mb-2">
+              ❌ Easy Cancellation
+            </h4>
+            <p>
+              Cancel tickets effortlessly with just a few clicks and get updated
+              instantly.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack Section -->
+      <section class="py-16 px-4">
+        <h3 class="text-3xl font-semibold text-center text-yellow-400 mb-12">
+          Tech Stack & Learning Outcomes
+        </h3>
+        <div class="max-w-4xl mx-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="text-yellow-300 border-b border-yellow-500">
+                <th class="p-2">Technology</th>
+                <th class="p-2">Description</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-200">
+              <tr class="border-b border-gray-700">
+                <td class="p-2">Java</td>
+                <td class="p-2">
+                  Handles backend logic, user interactions, and ticket
+                  processing.
+                </td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="p-2">SQL</td>
+                <td class="p-2">
+                  Manages train data, user history, and booking details.
+                </td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="p-2">HTML & CSS</td>
+                <td class="p-2">
+                  For layout and responsive user interface design.
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2">Tailwind CSS</td>
+                <td class="p-2">Used for modern styling and responsiveness.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="mt-8 text-gray-300">
+            <p>✨ <strong>Learning Outcomes:</strong></p>
+            <ul class="list-disc ml-6 mt-2">
+              <li>Developed a complete CRUD-based booking system</li>
+              <li>
+                Applied backend logic using Java & database design with SQL
+              </li>
+              <li>Built a clean and responsive UI using Tailwind CSS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="text-center py-4 bg-gray-900 text-gray-300 flex flex-wrap flex-col justify-center items-center"
+    >
+      <p>© 2025 IRCTC Clone. All Rights Reserved.</p>
+      <p class="mt-2">
+        Customer Support: 1800-XXXX-XXXX | Email: support@irctc-clone.com
+      </p>
+      <div class="h-30 w-60 mt-16 grid grid-cols-3 gap-x-2 justify-center">
+        <div class="">
+          <a href="https://x.com/Prabhatsingh415?t=BTGdSlxO0-aWVmkqh-wK4w&s=08 "
+            ><img src="../images/X.png" alt="X"
+          /></a>
+        </div>
+        <div class="">
+          <a href="https://github.com/prabhatsingh415"
+            ><img src="../images/github.png" alt="github"
+          /></a>
+        </div>
+        <div class="">
+          <a
+            href="https://www.linkedin.com/in/prabhat-singh-rj415?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+            ><img src="../images/linkdin.png" alt="LinkedIn"
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="../JAVASCRIPT/header.js"></script>
+</html>

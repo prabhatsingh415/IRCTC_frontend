@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Trains</title>
+    <link href="../CSS/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <body
+    class="bg-[url(../images/bg.avif)] bg-cover bg-center bg-fixed bg-no-repeat"
+  >
+    <div
+      class="fixed inset-0 w-full h-full bg-gradient-to-b from-black/70 to-blue-900/50 -z-10"
+    ></div>
+
+    <header class="w-full md:p-2">
+      <div id="navbar" class="flex items-center p-3 justify-between">
+        <!-- Logo -->
+        <div id="logo" class="flex flex-center">
+          <img src="../images/logo.svg" class="h-8 ml-2 md:h-12" />
+          <h1
+            class="text-2xl font-extrabold tracking-tight text-yellow-400 hidden md:block md:ml-8"
+          >
+            IRCTC Ticket Booking
+          </h1>
+        </div>
+
+        <!-- Bars Icon (Pushed to Right) -->
+        <button
+          id="navDialog"
+          class="ml-auto pr-4 md:hidden"
+          onclick="handleMenu()"
+        >
+          <img
+            src="../images/bars-solid.svg"
+            alt="navigation"
+            class="h-8 md:invisible"
+          />
+        </button>
+
+        <div id="links" class="hidden md:block mr-4">
+          <nav class="flex gap-16">
+            <a
+              href="index.html"
+              class="hover:text-stone-400 text-lg font-extrabold text-yellow-400"
+              >Home</a
+            >
+            <a
+              href="index.html#services"
+              class="hover:text-stone-400 text-lg font-extrabold text-yellow-400"
+              >Services</a
+            >
+            <a
+              href="contact.html"
+              class="hover:text-stone-400 font-extrabold text-lg text-yellow-400"
+              >Contact</a
+            >
+            <a
+              href="about.html"
+              class="hover:text-stone-400 font-extrabold text-lg text-yellow-400"
+              >About</a
+            >
+          </nav>
+        </div>
+      </div>
+
+      <div
+        id="menu"
+        class="fixed bg-[url(../images/bg.avif)] bg-cover bg-center bg-fixed bg-no-repeat inset-0 p-3 md:hidden hidden"
+      >
+        <div
+          class="fixed inset-0 w-full h-full bg-gradient-to-b from-black/70 to-blue-900/50 -z-10"
+        ></div>
+        <div class="flex justify-between">
+          <div id="logo">
+            <img src="../images/logo.svg" class="h-8 ml-2 md:h-12" />
+          </div>
+          <button
+            class="p-2 md:hidden transition-all duration-200 active:scale-90"
+            onclick="handleMenu()"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="mt-[16px]">
+          <a
+            href="index.html"
+            class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
+            >Home</a
+          >
+          <a
+            href="index.html"
+            class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
+            >About us</a
+          >
+          <a
+            href="index.html"
+            class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
+            >Contact us</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="flex flex-col items-center justify-center min-h-screen px-4">
+      <h2 class="text-4xl font-bold text-yellow-400 mb-8 mt-10 text-center">
+        Search Your Train
+      </h2>
+
+      <form class="bg-gray-800 p-8 rounded-2xl mb-4 w-full max-w-md">
+        <div class="relative">
+          <input
+            id="source"
+            type="text"
+            placeholder="Enter Source Station"
+            required
+            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+          />
+          <ul
+            id="sourceSuggestion"
+            class="absolute top-full left-0 right-0 bg-white shadow-md rounded-b-md border border-gray-300 max-h-60 overflow-y-auto z-50 hidden min-w-max"
+          ></ul>
+        </div>
+
+        <div class="relative">
+          <img
+            class="h-8 ml-40 my-2 md:ml-40 md:my-4"
+            src="../images/arrow.png"
+            alt="arrows"
+          />
+        </div>
+        <div class="relative">
+          <input
+            id="destination"
+            type="text"
+            placeholder="Enter Destination Station"
+            required
+            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+          />
+          <ul
+            id="destinationSuggestion"
+            class="absolute top-full left-0 right-0 bg-white shadow-md rounded-b-md border border-gray-300 max-h-60 overflow-y-auto z-50 hidden min-w-max"
+          ></ul>
+        </div>
+
+        <button
+          id="search"
+          type="button"
+          class="w-full bg-yellow-400 my-4 text-black font-bold py-3 rounded-lg hover:bg-yellow-300 transition duration-300"
+        >
+          Search Train
+        </button>
+      </form>
+      <!-- Loader Spinner -->
+      <div id="loader" class="hidden my-4">
+        <svg
+          class="animate-spin h-10 w-10 text-yellow-400 mx-auto"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8v8H4z"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Result Table Container -->
+      <div id="resultContainer" class="w-full max-w-3xl mx-auto mt-4 hidden">
+        <div
+          class="overflow-y-auto max-h-96 border border-yellow-400 rounded-2xl shadow-md"
+        >
+          <table
+            id="table"
+            class="min-w-full divide-y divide-yellow-400 text-sm text-yellow-400 bg-gray-900 hidden"
+          >
+            <thead class="sticky top-0 bg-gray-800 text-yellow-400">
+              <tr>
+                <th class="px-4 py-2 text-left">Train Name</th>
+                <th class="px-4 py-2 text-left">Train Type</th>
+                <th class="px-4 py-2 text-left">From → To</th>
+                <th class="px-4 py-2 text-left">Departure</th>
+                <th class="px-4 py-2 text-left">Arrival</th>
+                <th class="px-4 py-2 text-left">Seats</th>
+                <th class="px-4 py-2 text-left">Route</th>
+              </tr>
+            </thead>
+            <tbody id="result" class="divide-y divide-yellow-400"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Message Container -->
+      <div
+        id="message"
+        class="text-center text-yellow-400 mt-4 text-lg hidden"
+      ></div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="text-center py-4 bg-gray-900 text-gray-300 flex flex-wrap flex-col justify-center items-center"
+    >
+      <p class="mt-8">© 2025 IRCTC Clone. All Rights Reserved.</p>
+      <p class="mt-2">
+        Customer Support: 1800-XXXX-XXXX | Email: support@irctc-clone.com
+      </p>
+      <div class="h-30 w-60 mt-16 grid grid-cols-3 gap-x-2 justify-center">
+        <div class="">
+          <a href="https://x.com/Prabhatsingh415?t=BTGdSlxO0-aWVmkqh-wK4w&s=08 "
+            ><img src="../images/X.png" alt="X"
+          /></a>
+        </div>
+        <div class="">
+          <a href="https://github.com/prabhatsingh415"
+            ><img src="../images/github.png" alt="github"
+          /></a>
+        </div>
+        <div class="">
+          <a
+            href="https://www.linkedin.com/in/prabhat-singh-rj415?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+            ><img src="../images/linkdin.png" alt="LinkedIn"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="../JAVASCRIPT/header.js"></script>
+    <script src="../JAVASCRIPT/SearchTrain.js"></script>
+  </body>
+</html>

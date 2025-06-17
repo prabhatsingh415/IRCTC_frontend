@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SignUp</title>
+    <link href="../CSS/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-[url(../images/bg.avif)] bg-cover bg-center bg-fixed bg-no-repeat min-h-screen"
+  >
+    <!-- Overlay -->
+    <div
+      class="fixed inset-0 w-full h-full bg-gradient-to-b from-black/70 to-blue-900/50 -z-10"
+    ></div>
+
+    <!-- Main container -->
+    <div class="flex items-center justify-center min-h-screen px-4">
+      <div
+        class="bg-black/70 backdrop-blur-md text-yellow-400 rounded-2xl shadow-2xl p-8 w-full max-w-md"
+      >
+        <!-- Welcome Header -->
+        <h2 class="text-3xl font-bold text-center mb-6">
+          Welcome to Railway Booking
+        </h2>
+
+        <!-- Signup Form -->
+        <form>
+          <div class="mb-4">
+            <label for="username" class="block mb-2 text-sm font-semibold"
+              >Username</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block mb-2 text-sm font-semibold"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+          </div>
+          <div class="mb-6">
+            <label for="password" class="block mb-2 text-sm font-semibold"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-300 transition duration-300"
+          >
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer
+      class="text-center py-4 bg-gray-900 text-gray-300 flex flex-wrap flex-col justify-center items-center"
+    >
+      <p>© 2025 IRCTC Clone. All Rights Reserved.</p>
+      <p class="mt-2">
+        Customer Support: 1800-XXXX-XXXX | Email: support@irctc-clone.com
+      </p>
+      <div
+        class="h-30 w-60 mt-10 m-auto grid grid-cols-3 gap-x-2 justify-center"
+      >
+        <div>
+          <a href="https://x.com/Prabhatsingh415?t=BTGdSlxO0-aWVmkqh-wK4w&s=08 "
+            ><img src="../images/X.png" alt="X"
+          /></a>
+        </div>
+        <div>
+          <a href="https://github.com/prabhatsingh415"
+            ><img src="../images/github.png" alt="github"
+          /></a>
+        </div>
+        <div>
+          <a
+            href="https://www.linkedin.com/in/prabhat-singh-rj415?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+            ><img src="../images/linkdin.png" alt="LinkedIn"
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

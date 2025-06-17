@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../CSS/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-[url(../images/bg.avif)] bg-cover bg-center bg-fixed bg-no-repeat"
+  >
+    <div
+      class="fixed inset-0 w-full h-full bg-gradient-to-b from-black/70 to-blue-900/50 -z-10"
+    ></div>
+
+    <header class="w-full md:p-2">
+      <div id="navbar" class="flex items-center p-3 justify-between">
+        <!-- Logo -->
+        <div id="logo" class="flex flex-center">
+          <img src="../images/logo.svg" class="h-8 ml-2 md:h-12" />
+          <h1
+            class="text-2xl font-extrabold tracking-tight text-yellow-400 hidden md:block md:ml-8"
+          >
+            IRCTC Ticket Booking
+          </h1>
+        </div>
+
+        <!-- Bars Icon (Pushed to Right) -->
+        <button
+          id="navDialog"
+          class="ml-auto pr-4 md:hidden"
+          onclick="handleMenu()"
+        >
+          <img
+            src="../images/bars-solid.svg"
+            alt="navigation"
+            class="h-8 md:invisible"
+          />
+        </button>
+
+        <div id="links" class="hidden md:block mr-4">
+          <nav class="flex gap-16">
+            <a
+              href="index.html"
+              class="hover:text-stone-400 text-lg font-extrabold text-yellow-400"
+              >Home</a
+            >
+            <a
+              href="#services"
+              class="hover:text-stone-400 text-lg font-extrabold text-yellow-400"
+              >Services</a
+            >
+            <a
+              href="contact.html"
+              class="hover:text-stone-400 font-extrabold text-lg text-yellow-400"
+              >Contact</a
+            >
+            <a
+              href="about.html"
+              class="hover:text-stone-400 font-extrabold text-lg text-yellow-400"
+              >About</a
+            >
+          </nav>
+        </div>
+      </div>
+
+      <div
+        id="menu"
+        class="fixed bg-[url(../images/bg.avif)] bg-cover bg-center bg-fixed bg-no-repeat inset-0 p-3 md:hidden hidden"
+      >
+        <div
+          class="fixed inset-0 w-full h-full bg-gradient-to-b from-black/70 to-blue-900/50 -z-10"
+        ></div>
+        <div class="flex justify-between">
+          <div id="logo">
+            <img src="../images/logo.svg" class="h-8 ml-2 md:h-12" />
+          </div>
+          <button
+            class="p-2 md:hidden transition-all duration-200 active:scale-90"
+            onclick="handleMenu()"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="mt-[16px]">
+          <a
+            href="index.html"
+            class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
+            >About us</a
+          >
+          <a
+            href="contact.html"
+            class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
+            >Contact us</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="px-4 md:px-8 lg:px-16">
+      <!-- Hero Section -->
+      <div class="flex flex-col items-center text-center">
+        <h2
+          class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-yellow-400 mb-6 md:mb-10 mt-24 md:mt-32"
+        >
+          Your Journey, Our Tracks
+        </h2>
+        <p
+          class="text-base sm:text-lg md:text-xl font-bold text-gray-200 max-w-3xl"
+        >
+          Book, search, and manage your train tickets with ease—powered by IRCTC
+          for a seamless travel experience.
+        </p>
+      </div>
+
+      <!-- Services Section -->
+      <div
+        id="services"
+        class="flex flex-wrap justify-center gap-4 mt-10 md:mt-16"
+      >
+        <a href="BookTicket.html"
+          ><button
+            class="h-12 w-48 sm:w-56 md:w-64 rounded-2xl bg-yellow-400 hover:scale-105 transition-transform"
+          >
+            Book Ticket <i class="fa-solid fa-globe ml-2"></i></button
+        ></a>
+        <a href="searchTrain.html">
+          <button
+            class="h-12 w-48 sm:w-56 md:w-64 rounded-2xl bg-blue-600 hover:scale-105 transition-transform"
+          >
+            Search Train
+            <i class="fa-solid fa-magnifying-glass ml-2"></i></button
+        ></a>
+        <a href="cancelTicket.html"
+          ><button
+            class="h-12 w-48 sm:w-56 md:w-64 rounded-2xl bg-red-500 hover:scale-105 transition-transform"
+          >
+            Cancel Ticket <i class="fa-solid fa-xmark ml-2"></i></button
+        ></a>
+      </div>
+    </main>
+    <section class="w-full bg-gray-800 py-16 text-center mt-60">
+      <h2 class="text-3xl md:text-4xl mb-8 font-bold text-yellow-400">
+        Why Choose Us?
+      </h2>
+
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4"
+      >
+        <!-- Feature 1 -->
+        <div
+          class="bg-gray-700 p-6 rounded-lg text-white hover:scale-105 transition-transform"
+        >
+          <div class="text-yellow-400 text-4xl mb-4">
+            <i class="fa-solid fa-circle-exclamation"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Instant Booking</h3>
+          <p class="text-gray-400 mt-2">
+            Book your train tickets in seconds with our intuitive platform.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div
+          class="bg-gray-700 p-6 rounded-lg text-white hover:scale-105 transition-transform"
+        >
+          <div class="text-yellow-400 text-4xl mb-4">
+            <i class="fa-solid fa-search"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Smart Search</h3>
+          <p class="text-gray-400 mt-2">
+            Find the perfect train with real-time availability and routes.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div
+          class="bg-gray-700 p-6 rounded-lg text-white hover:scale-105 transition-transform"
+        >
+          <div class="text-yellow-400 text-4xl mb-4">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Hassle-Free Cancellation</h3>
+          <p class="text-gray-400 mt-2">
+            Cancel your tickets effortlessly with just a few clicks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="text-center py-4 bg-gray-900 text-gray-300 flex flex-wrap flex-col justify-center items-center"
+    >
+      <p>© 2025 IRCTC Clone. All Rights Reserved.</p>
+      <p class="mt-2">
+        Customer Support: 1800-XXXX-XXXX | Email: support@irctc-clone.com
+      </p>
+      <div
+        class="h-30 w-60 mt-10 m-auto grid grid-cols-3 gap-x-2 justify-center"
+      >
+        <div class="">
+          <a href="https://x.com/Prabhatsingh415?t=BTGdSlxO0-aWVmkqh-wK4w&s=08 "
+            ><img src="../images/X.png" alt="X"
+          /></a>
+        </div>
+        <div class="">
+          <a href="https://github.com/prabhatsingh415"
+            ><img src="../images/github.png" alt="github"
+          /></a>
+        </div>
+        <div class="">
+          <a
+            href="https://www.linkedin.com/in/prabhat-singh-rj415?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+            ><img src="../images/linkdin.png" alt="LinkedIn"
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="../JAVASCRIPT/header.js"></script>
+</html>
