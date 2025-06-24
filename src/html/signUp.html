@@ -3,18 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <link href="../CSS/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+    <title>SignUp</title>
   </head>
   <body
     class="bg-[url(../images/bg.avif)] bg-cover bg-center bg-fixed bg-no-repeat"
@@ -99,71 +95,95 @@
             >Home</a
           >
           <a
-            href="about.html"
+            href="index.html"
             class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
             >About us</a
           >
           <a
-            href="contact.html"
+            href="index.html"
             class="hover:bg-gray-800 text-yellow-400 text-lg font-extrabold m-3 p-3 block rounded-lg active:bg-gray-400"
             >Contact us</a
           >
         </div>
       </div>
     </header>
-    <main>
-      <section
-        class="flex flex-col items-center justify-center min-h-screen px-4"
-      >
-        <h2 class="text-4xl font-bold text-yellow-400 mb-8 mt-10 text-center">
-          Book Your Train Ticket
-        </h2>
 
-        <form class="bg-gray-800 p-8 rounded-2xl mb-32 w-full max-w-md">
-          <input
-            id="passengerName"
-            type="text"
-            placeholder="Enter Passenger Name"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
-          <input
-            id="trainId"
-            type="number"
-            placeholder="Enter Train ID"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
-          <input
-            id="sourceStation"
-            type="text"
-            placeholder="Enter Source Station"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
-          <input
-            id="destinationStation"
-            type="text"
-            placeholder="Enter Destination Station"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
-          <input
-            id="travelDate"
-            type="date"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-6 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
+    <main class="flex items-center justify-center min-h-screen px-4">
+      <div
+        class="bg-black/70 backdrop-blur-md text-yellow-400 rounded-2xl shadow-2xl p-8 w-full max-w-md"
+      >
+        <h2 class="text-3xl font-bold text-center mb-6">Create your Account</h2>
+        <form id="signupForm" novalidate>
+          <div class="mb-4">
+            <label for="username" class="block mb-2 text-sm font-semibold"
+              >Username</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block mb-2 text-sm font-semibold"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+          </div>
+          <div class="mb-4 hidden" id="otpSection">
+            <label for="otp" class="block mb-2 text-sm font-semibold"
+              >OTP</label
+            >
+            <input
+              type="number"
+              id="otp"
+              class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+          </div>
+          <div class="mb-6 hidden" id="passwordSection">
+            <label for="password" class="block mb-2 text-sm font-semibold"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="w-full px-4 py-2 bg-gray-800 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              required
+            />
+          </div>
           <button
-            id="confirmBtn"
-            type="button"
-            class="w-full bg-yellow-400 text-black font-bold py-3 rounded-lg hover:bg-yellow-300 transition duration-300"
+            id="submit"
+            type="submit"
+            class="w-full py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-300 transition duration-300"
           >
-            Confirm Booking
+            Continue
           </button>
         </form>
-      </section>
+        <!-- Loader -->
+        <div id="loader" class="hidden text-center mt-4">
+          <div
+            class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-yellow-400 mx-auto"
+          ></div>
+          <p class="text-yellow-400 mt-2">Processing...</p>
+        </div>
+        <div
+          id="blurOverlay"
+          class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-10"
+        ></div>
+      </div>
     </main>
+
+    <!-- Footer (Copied from Search Page) -->
     <footer
       class="text-center py-4 bg-gray-900 text-gray-300 flex flex-wrap flex-col justify-center items-center"
     >
@@ -172,51 +192,24 @@
         Customer Support: 1800-XXXX-XXXX | Email: support@irctc-clone.com
       </p>
       <div class="h-30 w-60 mt-16 grid grid-cols-3 gap-x-2 justify-center">
-        <div class="">
-          <a href="https://x.com/Prabhatsingh415?t=BTGdSlxO0-aWVmkqh-wK4w&s=08 "
+        <div>
+          <a href="https://x.com/Prabhatsingh415"
             ><img src="../images/X.png" alt="X"
           /></a>
         </div>
-        <div class="">
+        <div>
           <a href="https://github.com/prabhatsingh415"
             ><img src="../images/github.png" alt="github"
           /></a>
         </div>
-        <div class="">
-          <a
-            href="https://www.linkedin.com/in/prabhat-singh-rj415?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+        <div>
+          <a href="https://www.linkedin.com/in/prabhat-singh-rj415"
             ><img src="../images/linkdin.png" alt="LinkedIn"
           /></a>
         </div>
       </div>
     </footer>
-    <!-- Login Required Modal -->
-    <div
-      id="loginModal"
-      class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
-    >
-      <div
-        class="bg-slate-800 text-yellow-400 rounded-2xl shadow-xl p-6 w-80 text-center"
-      >
-        <h2 class="text-xl font-bold mb-2">Login Required</h2>
-        <p class="mb-4">You must be logged in to book a ticket.</p>
-        <div class="flex justify-center gap-4">
-          <a
-            href="../html/signIn.html"
-            class="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition"
-          >
-            Signup/Login
-          </a>
-          <button
-            onclick="closeLoginModal()"
-            class="border border-yellow-400 px-4 py-2 rounded-lg hover:bg-yellow-400 hover:text-black transition"
-          >
-            Cancel
-          </button>
-        </div>
-      </div>
-    </div>
+    <script src="../JAVASCRIPT/header.js"></script>
+    <script src="../JAVASCRIPT/signUp.js"></script>
   </body>
-  <script src="../JAVASCRIPT/header.js"></script>
-  <script src="../JAVASCRIPT/BookTicket.js"></script>
 </html>
