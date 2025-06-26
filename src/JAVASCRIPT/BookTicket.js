@@ -1,5 +1,8 @@
 const backendURL = "https://irctc-ticket-booking-app.onrender.com/bookTicket";
 
+// Grab loader element
+const bookingLoader = document.getElementById("bookingLoader");
+
 document.getElementById("confirmBtn").addEventListener("click", async () => {
   const name = document.getElementById("passengerName").value.trim();
   const trainId = document.getElementById("trainId").value.trim();
@@ -9,18 +12,24 @@ document.getElementById("confirmBtn").addEventListener("click", async () => {
     .value.trim();
   const date = document.getElementById("travelDate").value;
 
+  // Show loader overlay
+  bookingLoader.classList.remove("hidden");
+
   try {
     // STEP 1: Train ID
     let res = await fetch(backendURL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      credentials: "include", // <-- necessary to send session cookie
       body: new URLSearchParams({ step: "trainId", trainId }),
     });
     let data = await res.json();
 
     if (!data.success) {
-      if (data.message.toLowerCase().includes("not logged"))
+      bookingLoader.classList.add("hidden");
+      if (data.message.toLowerCase().includes("not logged")) {
         return showLoginModal();
+      }
       return showPopup(data.message);
     }
 
@@ -28,16 +37,21 @@ document.getElementById("confirmBtn").addEventListener("click", async () => {
     res = await fetch(backendURL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      credentials: "include",
       body: new URLSearchParams({ step: "date", date }),
     });
     data = await res.json();
 
-    if (!data.success) return showPopup(data.message);
+    if (!data.success) {
+      bookingLoader.classList.add("hidden");
+      return showPopup(data.message);
+    }
 
     // STEP 3: Final Booking
     res = await fetch(backendURL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      credentials: "include",
       body: new URLSearchParams({
         step: "passengerName",
         name,
@@ -47,12 +61,17 @@ document.getElementById("confirmBtn").addEventListener("click", async () => {
     });
     data = await res.json();
 
-    if (!data.success) return showPopup(data.message);
+    if (!data.success) {
+      bookingLoader.classList.add("hidden");
+      return showPopup(data.message);
+    }
 
-    // ✅ Final Success
+    // Final Success
+    bookingLoader.classList.add("hidden");
     showPopup(data.message, true);
   } catch (err) {
     console.error("Error booking ticket:", err);
+    bookingLoader.classList.add("hidden");
     showPopup("Something went wrong. Try again.");
   }
 });
@@ -84,3 +103,6 @@ function showLoginModal() {
 function closeLoginModal() {
   document.getElementById("loginModal")?.classList.add("hidden");
 }
+
+// Optional: If you want closeLoginModal to be globally available (e.g., inline onclick),
+// ensure this script is loaded after DOM, which is already the case since it's at end of body.

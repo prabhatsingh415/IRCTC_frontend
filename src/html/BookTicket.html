@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Book Your Train Ticket</title>
     <link href="../CSS/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -190,33 +190,56 @@
         </div>
       </div>
     </footer>
+
+    <!-- Login Required Modal -->
     <!-- Login Required Modal -->
     <div
       id="loginModal"
-      class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
+      class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm"
     >
       <div
         class="bg-slate-800 text-yellow-400 rounded-2xl shadow-xl p-6 w-80 text-center"
       >
         <h2 class="text-xl font-bold mb-2">Login Required</h2>
         <p class="mb-4">You must be logged in to book a ticket.</p>
-        <div class="flex justify-center gap-4">
+        <div class="flex flex-col gap-3">
+          <!-- Login button -->
           <a
-            href="../html/signIn.html"
-            class="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition"
+            href="../html/logIn.html"
+            class="w-full bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition"
           >
-            Signup/Login
+            Login
           </a>
+          <!-- Signup button -->
+          <a
+            href="../html/signUp.html"
+            class="w-full bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition"
+          >
+            Signup
+          </a>
+          <!-- Cancel button -->
           <button
             onclick="closeLoginModal()"
-            class="border border-yellow-400 px-4 py-2 rounded-lg hover:bg-yellow-400 hover:text-black transition"
+            class="w-full border border-yellow-400 text-yellow-400 px-4 py-2 rounded-lg hover:bg-yellow-400 hover:text-black transition"
           >
             Cancel
           </button>
         </div>
       </div>
     </div>
+
+    <!-- Booking Loader Overlay -->
+    <div
+      id="bookingLoader"
+      class="fixed inset-0 z-40 hidden flex items-center justify-center bg-black/50 backdrop-blur-sm"
+    >
+      <div
+        class="w-16 h-16 border-4 border-t-yellow-400 border-gray-200 rounded-full animate-spin"
+      ></div>
+    </div>
+
+    <!-- Scripts (at end so DOM elements exist) -->
+    <script src="../JAVASCRIPT/header.js"></script>
+    <script src="../JAVASCRIPT/BookTicket.js"></script>
   </body>
-  <script src="../JAVASCRIPT/header.js"></script>
-  <script src="../JAVASCRIPT/BookTicket.js"></script>
 </html>

@@ -1,5 +1,5 @@
 let menuDiv = document.getElementById("menu");
-
+console.log("header .js loaded");
 function handleMenu() {
   menuDiv.classList.toggle("hidden");
 
