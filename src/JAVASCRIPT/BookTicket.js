@@ -33,6 +33,37 @@ document.getElementById("confirmBtn").addEventListener("click", async () => {
       return showPopup(data.message);
     }
 
+    // NEW: Populate station dropdowns
+    if (Array.isArray(data.stations)) {
+      const stations = data.stations;
+
+      const sourceStations = stations.slice(0, -1);
+      const destinationStations = stations.slice(1);
+
+      const sourceSelect = document.getElementById("sourceStation");
+      const destSelect = document.getElementById("destinationStation");
+
+      // Populate source station dropdown
+      sourceSelect.innerHTML =
+        "<option value=''>Select Source Station</option>";
+      sourceStations.forEach((station) => {
+        const opt = document.createElement("option");
+        opt.value = station;
+        opt.textContent = station;
+        sourceSelect.appendChild(opt);
+      });
+
+      // Populate destination station dropdown
+      destSelect.innerHTML =
+        "<option value=''>Select Destination Station</option>";
+      destinationStations.forEach((station) => {
+        const opt = document.createElement("option");
+        opt.value = station;
+        opt.textContent = station;
+        destSelect.appendChild(opt);
+      });
+    }
+
     // STEP 2: Date
     res = await fetch(backendURL, {
       method: "POST",
@@ -103,6 +134,3 @@ function showLoginModal() {
 function closeLoginModal() {
   document.getElementById("loginModal")?.classList.add("hidden");
 }
-
-// Optional: If you want closeLoginModal to be globally available (e.g., inline onclick),
-// ensure this script is loaded after DOM, which is already the case since it's at end of body.

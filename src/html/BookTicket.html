@@ -134,20 +134,22 @@
             required
             class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
           />
-          <input
+          <select
             id="sourceStation"
-            type="text"
-            placeholder="Enter Source Station"
             required
             class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
-          <input
+          >
+            <option value="">Select Source Station</option>
+          </select>
+
+          <select
             id="destinationStation"
-            type="text"
-            placeholder="Enter Destination Station"
             required
             class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
+          >
+            <option value="">Select Destination Station</option>
+          </select>
+
           <input
             id="travelDate"
             type="date"
