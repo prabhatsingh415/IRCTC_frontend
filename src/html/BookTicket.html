@@ -120,49 +120,65 @@
         </h2>
 
         <form class="bg-gray-800 p-8 rounded-2xl mb-32 w-full max-w-md">
-          <input
-            id="passengerName"
-            type="text"
-            placeholder="Enter Passenger Name"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
-          <input
-            id="trainId"
-            type="number"
-            placeholder="Enter Train ID"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
-          <select
-            id="sourceStation"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          >
-            <option value="">Select Source Station</option>
-          </select>
+          <!-- Train ID Validation Section -->
+          <div id="trainIdSection">
+            <input
+              id="trainId"
+              type="number"
+              placeholder="Enter Train ID"
+              required
+              class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            />
+            <button
+              id="validateTrainBtn"
+              type="button"
+              class="w-full bg-yellow-400 text-black font-bold py-3 rounded-lg hover:bg-yellow-300 transition duration-300"
+            >
+              Validate Train ID
+            </button>
+          </div>
 
-          <select
-            id="destinationStation"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          >
-            <option value="">Select Destination Station</option>
-          </select>
+          <!-- Rest of Booking Form -->
+          <div id="bookingFormSection" class="hidden">
+            <input
+              id="passengerName"
+              type="text"
+              placeholder="Enter Passenger Name"
+              required
+              class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            />
 
-          <input
-            id="travelDate"
-            type="date"
-            required
-            class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-6 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          />
-          <button
-            id="confirmBtn"
-            type="button"
-            class="w-full bg-yellow-400 text-black font-bold py-3 rounded-lg hover:bg-yellow-300 transition duration-300"
-          >
-            Confirm Booking
-          </button>
+            <select
+              id="sourceStation"
+              required
+              class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            >
+              <option value="">Select Source Station</option>
+            </select>
+
+            <select
+              id="destinationStation"
+              required
+              class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            >
+              <option value="">Select Destination Station</option>
+            </select>
+
+            <input
+              id="travelDate"
+              type="date"
+              required
+              class="w-full border border-yellow-400 text-yellow-500 bg-gray-900 h-14 rounded-lg px-4 mb-6 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            />
+
+            <button
+              id="confirmBtn"
+              type="button"
+              class="w-full bg-yellow-400 text-black font-bold py-3 rounded-lg hover:bg-yellow-300 transition duration-300"
+            >
+              Confirm Booking
+            </button>
+          </div>
         </form>
       </section>
     </main>
