@@ -1,5 +1,4 @@
 let menuDiv = document.getElementById("menu");
-console.log("header .js loaded");
 function handleMenu() {
   menuDiv.classList.toggle("hidden");
 
@@ -7,7 +6,7 @@ function handleMenu() {
   const footer = document.querySelector("footer");
   const navbar = document.getElementById("navbar");
 
-  // Only toggle these if they exist (safe for reuse in all files)
+  // Only toggle these if they exist
   if (menuDiv.classList.contains("hidden")) {
     main?.classList.remove("hidden");
     footer?.classList.remove("hidden");
